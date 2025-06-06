@@ -100,9 +100,10 @@ export class MemStorage implements IStorage {
   async createToolkit(insertToolkit: InsertToolkit): Promise<Toolkit> {
     const id = this.currentToolkitId++;
     const toolkit: Toolkit = {
-      ...insertToolkit,
-      description: insertToolkit.description || null,
       id,
+      name: insertToolkit.name,
+      description: insertToolkit.description || null,
+      userId: insertToolkit.userId,
       createdAt: new Date(),
     };
     this.toolkits.set(id, toolkit);
@@ -134,9 +135,10 @@ export class MemStorage implements IStorage {
   async createFolder(insertFolder: InsertFolder): Promise<Folder> {
     const id = this.currentFolderId++;
     const folder: Folder = {
-      ...insertFolder,
-      parentId: insertFolder.parentId || null,
       id,
+      name: insertFolder.name,
+      toolkitId: insertFolder.toolkitId,
+      parentId: insertFolder.parentId || null,
       createdAt: new Date(),
     };
     this.folders.set(id, folder);
@@ -197,16 +199,23 @@ export class MemStorage implements IStorage {
     const id = this.currentAssetId++;
     const now = new Date();
     const asset: Asset = {
-      ...insertAsset,
-      status: insertAsset.status || null,
-      metadata: insertAsset.metadata || null,
-      tags: insertAsset.tags || [],
+      id,
+      name: insertAsset.name,
+      originalName: insertAsset.originalName,
+      fileType: insertAsset.fileType,
+      mimeType: insertAsset.mimeType,
+      size: insertAsset.size,
       width: insertAsset.width || null,
       height: insertAsset.height || null,
       duration: insertAsset.duration || null,
+      filePath: insertAsset.filePath,
       thumbnailPath: insertAsset.thumbnailPath || null,
       folderId: insertAsset.folderId || null,
-      id,
+      toolkitId: insertAsset.toolkitId,
+      userId: insertAsset.userId,
+      tags: insertAsset.tags || [],
+      status: insertAsset.status || null,
+      metadata: insertAsset.metadata || null,
       createdAt: now,
       updatedAt: now,
     };
@@ -273,9 +282,10 @@ export class MemStorage implements IStorage {
   async createTag(insertTag: InsertTag): Promise<Tag> {
     const id = this.currentTagId++;
     const tag: Tag = {
-      ...insertTag,
-      color: insertTag.color || "#6b7280",
       id,
+      name: insertTag.name,
+      color: insertTag.color || "#6b7280",
+      userId: insertTag.userId,
       createdAt: new Date(),
     };
     this.tags.set(id, tag);
