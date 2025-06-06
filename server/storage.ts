@@ -69,8 +69,10 @@ export class MemStorage implements IStorage {
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.currentUserId++;
     const user: User = {
-      ...insertUser,
       id,
+      username: insertUser.username,
+      password: insertUser.password,
+      role: insertUser.role || "prospect",
       createdAt: new Date(),
     };
     this.users.set(id, user);
@@ -99,6 +101,7 @@ export class MemStorage implements IStorage {
     const id = this.currentToolkitId++;
     const toolkit: Toolkit = {
       ...insertToolkit,
+      description: insertToolkit.description || null,
       id,
       createdAt: new Date(),
     };
@@ -132,6 +135,7 @@ export class MemStorage implements IStorage {
     const id = this.currentFolderId++;
     const folder: Folder = {
       ...insertFolder,
+      parentId: insertFolder.parentId || null,
       id,
       createdAt: new Date(),
     };
@@ -194,6 +198,14 @@ export class MemStorage implements IStorage {
     const now = new Date();
     const asset: Asset = {
       ...insertAsset,
+      status: insertAsset.status || null,
+      metadata: insertAsset.metadata || null,
+      tags: insertAsset.tags || [],
+      width: insertAsset.width || null,
+      height: insertAsset.height || null,
+      duration: insertAsset.duration || null,
+      thumbnailPath: insertAsset.thumbnailPath || null,
+      folderId: insertAsset.folderId || null,
       id,
       createdAt: now,
       updatedAt: now,
@@ -219,16 +231,17 @@ export class MemStorage implements IStorage {
     const userAssets = Array.from(this.assets.values()).filter(asset => asset.userId === userId);
     
     let filtered = userAssets.filter(asset => {
+      const assetTags = asset.tags || [];
       const matchesQuery = asset.name.toLowerCase().includes(query.toLowerCase()) ||
                           asset.originalName.toLowerCase().includes(query.toLowerCase()) ||
-                          asset.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()));
+                          assetTags.some(tag => tag.toLowerCase().includes(query.toLowerCase()));
       
       if (!matchesQuery) return false;
       
       if (filters?.fileType && asset.fileType !== filters.fileType) return false;
       
       if (filters?.tags && filters.tags.length > 0) {
-        const hasMatchingTag = filters.tags.some(tag => asset.tags.includes(tag));
+        const hasMatchingTag = filters.tags.some(tag => assetTags.includes(tag));
         if (!hasMatchingTag) return false;
       }
       
@@ -261,6 +274,7 @@ export class MemStorage implements IStorage {
     const id = this.currentTagId++;
     const tag: Tag = {
       ...insertTag,
+      color: insertTag.color || "#6b7280",
       id,
       createdAt: new Date(),
     };
