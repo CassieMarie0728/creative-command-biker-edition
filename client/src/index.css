@@ -78,7 +78,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-rajdhani antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Rajdhani', sans-serif;
   }
 
