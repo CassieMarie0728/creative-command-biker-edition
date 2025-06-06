@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import biker fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap');
+
+:root {
+  /* Biker Edition Color Scheme */
+  --background: 0 0% 0%;  /* #000000 - Pure black */
+  --foreground: 210 11% 82%;  /* #d1d5db - Chrome */
+  --muted: 220 13% 10%;  /* #1a1a1a - Dark metal */
+  --muted-foreground: 215 14% 42%;  /* #6b7280 - Gunmetal */
+  --popover: 220 13% 10%;  /* #1a1a1a - Dark metal */
+  --popover-foreground: 210 11% 82%;  /* #d1d5db - Chrome */
+  --card: 220 13% 10%;  /* #1a1a1a - Dark metal */
+  --card-foreground: 210 11% 82%;  /* #d1d5db - Chrome */
+  --border: 215 14% 42%;  /* #6b7280 - Gunmetal */
+  --input: 220 13% 10%;  /* #1a1a1a - Dark metal */
+  --primary: 0 84% 60%;  /* #dc2626 - Blood red */
+  --primary-foreground: 0 0% 100%;  /* #ffffff - White */
+  --secondary: 220 13% 10%;  /* #1a1a1a - Dark metal */
+  --secondary-foreground: 210 11% 82%;  /* #d1d5db - Chrome */
+  --accent: 43 96% 56%;  /* #f59e0b - Flame orange */
+  --accent-foreground: 0 0% 0%;  /* #000000 - Black */
+  --destructive: 0 84% 60%;  /* #dc2626 - Blood red */
+  --destructive-foreground: 0 0% 100%;  /* #ffffff - White */
+  --ring: 0 84% 60%;  /* #dc2626 - Blood red */
+  --radius: 0.5rem;
+
+  /* Theme variations */
+  --road-rash-primary: 0 84% 60%;  /* Deep red */
+  --chrome-heart-primary: 210 11% 82%;  /* Silver/chrome */
+  --ash-gasoline-primary: 43 96% 56%;  /* Amber/gasoline */
+}
+
+.dark {
+  --background: 0 0% 0%;
+  --foreground: 210 11% 82%;
+  --muted: 220 13% 10%;
+  --muted-foreground: 215 14% 42%;
+  --popover: 220 13% 10%;
+  --popover-foreground: 210 11% 82%;
+  --card: 220 13% 10%;
+  --card-foreground: 210 11% 82%;
+  --border: 215 14% 42%;
+  --input: 220 13% 10%;
+  --primary: 0 84% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 13% 10%;
+  --secondary-foreground: 210 11% 82%;
+  --accent: 43 96% 56%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 0 84% 60%;
+}
+
+/* Theme variations */
+.theme-road-rash {
+  --primary: 0 84% 60%;  /* Blood red */
+  --accent: 0 100% 25%;  /* Dark red */
+}
+
+.theme-chrome-heart {
+  --primary: 210 11% 82%;  /* Chrome */
+  --accent: 220 13% 91%;  /* Light chrome */
+}
+
+.theme-ash-gasoline {
+  --primary: 43 96% 56%;  /* Amber */
+  --accent: 39 100% 40%;  /* Dark amber */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-rajdhani antialiased;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', monospace;
+    @apply font-bold tracking-wider uppercase;
+  }
+}
+
+@layer components {
+  /* Workbench texture for drop zones */
+  .workbench-texture {
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255,255,255,.05) 1px, transparent 1px),
+      radial-gradient(circle at 80% 50%, rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(45deg, #1a1a1a 25%, transparent 25%),
+      linear-gradient(-45deg, #1a1a1a 25%, transparent 25%);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  }
+
+  /* Metal button styling */
+  .metal-button {
+    @apply bg-gradient-to-br from-neutral-700 to-neutral-900 border border-neutral-600 transition-all duration-200;
+    background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+  }
+  
+  .metal-button:hover {
+    @apply shadow-lg;
+    background: linear-gradient(145deg, #404040, #2d2d2d);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+  }
+
+  .metal-button:active {
+    transform: scale(0.95);
+  }
+
+  /* Chrome accent styling */
+  .chrome-accent {
+    @apply bg-gradient-to-br from-neutral-300 to-neutral-400 text-black;
+    background: linear-gradient(145deg, #d1d5db, #9ca3af);
+  }
+
+  /* Drag zone styling */
+  .drag-zone {
+    @apply border-2 border-dashed border-neutral-600 transition-all duration-300;
+  }
+  
+  .drag-zone.drag-over {
+    @apply border-red-600 bg-red-600/10;
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.2);
+  }
+
+  /* Metal checkbox styling */
+  .metal-checkbox {
+    @apply appearance-none w-4 h-4 border border-neutral-600 rounded bg-neutral-800 checked:bg-red-600 checked:border-red-600;
+  }
+
+  /* Asset card styling */
+  .asset-card {
+    @apply transition-all duration-300 hover:shadow-lg;
+  }
+
+  .asset-card:hover {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+  }
+
+  /* Folder item styling */
+  .folder-item {
+    @apply transition-colors duration-200;
+  }
+
+  .folder-item:hover {
+    @apply bg-neutral-700/20;
+  }
+
+  /* Spark animation */
+  .spark-animation {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .spark-animation::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #f59e0b;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: spark 0.5s ease-out;
+  }
+
+  /* Gear spin animation */
+  .gear-spin {
+    animation: spin 2s linear infinite;
+  }
+
+  /* Pulse red animation */
+  .pulse-red {
+    animation: pulse-red 2s infinite;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes spark {
+    0% { 
+      opacity: 1; 
+      transform: translate(-50%, -50%) scale(1); 
+    }
+    100% { 
+      opacity: 0; 
+      transform: translate(-50%, -50%) scale(3); 
+    }
+  }
+
+  @keyframes pulse-red {
+    0%, 100% { 
+      box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); 
+    }
+    50% { 
+      box-shadow: 0 0 0 20px rgba(220, 38, 38, 0); 
+    }
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Text shadow utilities */
+  .text-shadow-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  /* Border glow utilities */
+  .border-glow-red {
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+  }
+
+  .border-glow-orange {
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+  }
+}
