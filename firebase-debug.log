@@ -1,31 +1,64 @@
-[debug] [2025-06-09T20:04:18.342Z] ----------------------------------------------------------------------
-[debug] [2025-06-09T20:04:18.345Z] Command:       /nix/store/rbdrkcs5kkwpalxcd7c6bnm33lk2955n-nodejs-20.19.0/bin/node /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/bin/firebase.js login --no-localhost
-[debug] [2025-06-09T20:04:18.346Z] CLI Version:   14.3.1
-[debug] [2025-06-09T20:04:18.346Z] Platform:      linux
-[debug] [2025-06-09T20:04:18.346Z] Node Version:  v20.19.0
-[debug] [2025-06-09T20:04:18.346Z] Time:          Mon Jun 09 2025 20:04:18 GMT+0000 (Coordinated Universal Time)
-[debug] [2025-06-09T20:04:18.347Z] ----------------------------------------------------------------------
+[debug] [2025-06-09T20:27:53.870Z] ----------------------------------------------------------------------
+[debug] [2025-06-09T20:27:53.872Z] Command:       /nix/store/rbdrkcs5kkwpalxcd7c6bnm33lk2955n-nodejs-20.19.0/bin/node /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/bin/firebase.js init hosting
+[debug] [2025-06-09T20:27:53.873Z] CLI Version:   14.3.1
+[debug] [2025-06-09T20:27:53.873Z] Platform:      linux
+[debug] [2025-06-09T20:27:53.873Z] Node Version:  v20.19.0
+[debug] [2025-06-09T20:27:53.873Z] Time:          Mon Jun 09 2025 20:27:53 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-06-09T20:27:53.874Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-06-09T20:04:18.350Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
-[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
- 
-[debug] [2025-06-09T20:04:18.498Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
-[debug] [2025-06-09T20:04:18.499Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
-[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
-[debug] [2025-06-09T20:04:25.290Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
-[debug] [2025-06-09T20:04:25.290Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"859093e6-be14-49f2-968d-3b43b77ef079"}
-[debug] [2025-06-09T20:04:25.492Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
-[debug] [2025-06-09T20:04:25.494Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"009vdB-E18MSlPY3aE1Q203q5p1QWeDzJgrLhICy_0w"}
+[debug] [2025-06-09T20:27:53.880Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-09T20:27:53.881Z] > authorizing via signed-in user (cmcrossno@gmail.com)
 [info] 
-[info] To sign in to the Firebase CLI:
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/user/creativebikecommand
+
 [info] 
-[info] 1. Take note of your session ID:
+=== Project Setup
 [info] 
-[info]    85909
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
 [info] 
-[info] 2. Visit the URL below on any device and follow the instructions to get your code:
+[debug] [2025-06-09T20:28:26.632Z] Checked if tokens are valid: true, expires at: 1749504451063
+[debug] [2025-06-09T20:28:26.633Z] Checked if tokens are valid: true, expires at: 1749504451063
+[debug] [2025-06-09T20:28:26.639Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-06-09T20:28:27.004Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-06-09T20:28:27.004Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project creative-assets-db2bb (Creative Assets Vault) 
 [info] 
-[info]    https://auth.firebase.tools/login?code_challenge=Gwm4h-AjoOmagyyf7mFJ0V8-X32J6FGsB_3GPbqbFQk&session=859093e6-be14-49f2-968d-3b43b77ef079&attest=009vdB-E18MSlPY3aE1Q203q5p1QWeDzJgrLhICy_0w
-[info] 
-[info] 3. Paste or enter the authorization code below once you have it:
-[info] 
+=== Hosting Setup
+[debug] [2025-06-09T20:28:31.598Z] Checked if tokens are valid: true, expires at: 1749504451063
+[debug] [2025-06-09T20:28:31.598Z] Checked if tokens are valid: true, expires at: 1749504451063
+[debug] [2025-06-09T20:28:31.599Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/creative-assets-db2bb [none]
+[debug] [2025-06-09T20:28:31.912Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/creative-assets-db2bb 200
+[debug] [2025-06-09T20:28:31.913Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/creative-assets-db2bb {"projectId":"creative-assets-db2bb","projectNumber":"241659042370","displayName":"Creative Assets Vault","name":"projects/creative-assets-db2bb","resources":{"hostingSite":"creative-assets-db2bb"},"state":"ACTIVE","etag":"1_a20846f9-8266-48b2-99e5-0588ddcbd94e"}
+[debug] [2025-06-09T20:28:42.808Z] Error: Cannot find module 'vite'
+Require stack:
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/frameworks/utils.js
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/frameworks/index.js
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/emulator/controller.js
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/emulator/commandUtils.js
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/commands/database-get.js
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/commands/index.js
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/index.js
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/bin/cli.js
+- /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/bin/firebase.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Function.resolve (node:internal/modules/helpers:193:19)
+    at relativeRequire (/nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/frameworks/utils.js:197:34)
+    at getConfig (/nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/frameworks/vite/index.js:110:65)
+    at discover (/nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/frameworks/vite/index.js:59:68)
+    at async /nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/frameworks/vite/index.js:37:55
+    at async discover (/nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/frameworks/index.js:47:32)
+    at async doSetup (/nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/init/features/hosting/index.js:53:11)
+    at async init (/nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/init/index.js:41:9)
+    at async Command.initAction [as actionFn] (/nix/store/nh3zwzkz6wh6qa7bd2ywzr7irjij7j1i-firebase-tools-14.3.1/lib/node_modules/firebase-tools/lib/commands/init.js:187:5)
+[error] 
+[error] Error: An unexpected error has occurred.

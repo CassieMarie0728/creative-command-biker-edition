@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "678180931322",
+    "project_id": "creative-command---biker-ed",
+    "storage_bucket": "creative-command---biker-ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678180931322:android:07ef1017f72a937a966b43",
+        "android_client_info": {
+          "package_name": "com.example.creative_command_biker_edition"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc1kRffx-ustepIw42-2bX670crr-uuzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
