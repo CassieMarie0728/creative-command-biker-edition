@@ -15,7 +15,7 @@
 [debug] [2025-06-09T20:04:25.290Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
 [debug] [2025-06-09T20:04:25.290Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"859093e6-be14-49f2-968d-3b43b77ef079"}
 [debug] [2025-06-09T20:04:25.492Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
-[debug] [2025-06-09T20:04:25.494Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"009vdB-E18MSlPY3aE1Q203q5p1QWeDzJgrLhICy_0w"}
+[debug] [2025-06-09T20:04:25.494Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"009vdB-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_xxxx_xx"}
 [info] 
 [info] To sign in to the Firebase CLI:
 [info] 
