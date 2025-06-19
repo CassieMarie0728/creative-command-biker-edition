@@ -61,4 +61,6 @@ jobs:
           app-name: 'creative-command-biker-edition'
           slot-name: 'Production'
           package: .
-          
+
+        - name: Azure App Service Settings
+          uses: Azure/appservice-settings@v1
