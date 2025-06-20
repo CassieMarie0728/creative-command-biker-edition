@@ -33,7 +33,7 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ 4193e058-2df8-45d5-b71d-b63a97462adb }}
           slug: CassieMarie0728/creative-command-biker-edition
 
       # Bonus points: fail if coverage is missing, because we have standards
